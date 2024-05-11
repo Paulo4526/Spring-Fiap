@@ -1,0 +1,30 @@
+Aqui vamos criar um arvquivo para instrução em passos
+
+1- Criar a model com suas anotações spring
+    @Entity <-Aqui informarmos ao JPA do Spring que nossa classe é uma entidade->
+    @Table(name = "TBL_USUARIO")<-Aqui damos o nome a nossa tabela no banco de dados, como ela se chamará no banco de dados->
+    @Getter <-Aqui é uma anotação do Lombok para criação dos getters automaticamente de forma virtual->
+    @Setter <-Aqui é uma anotação do Lombok para criação dos setters automaticamente de forma virtual->
+    @NoArgsConstructor <-Aqui é uma do Lombok  anotação para criação de construtores vazios automaticamente->
+    @AllArgsConstructor <-Aqui é uma anotação do Lombok para criação de construtores com atributos automaticamente->
+    @EqualsAndHashCode <-Aqui é uma anotação lombok para criação de HashCode onde iremos colocar os valores na nossa classe->
+    OBS: Ao implementarmos o EqualsAndHashCode aparecerá um erro e passando o mouse encima ele solicitará a implementação de alguns metodos.
+
+2- Após a Criação da Model precisamos Criar nossas classes DTOs para receber valores a serem cadastrados e exibir
+    somente os valores desejados assim com segurança poderemos omitir insofmrações como senhas, documentos e afins
+
+3 - Criar nossas interfaces repositorios para que possamos atribuir valores as nossas classes com os metodos posteriores
+    essa interface funciona como uma classe DAO para implementação de valores, pesquisa e etc.
+
+4 - Criamos as services implementando nossas interfaces para cada metodo que criarmos como se fosse um DAOImpl.
+
+5 - Implementamos nossos metodos na nossa controller, o memso funcionará como se fosse uma Servlet criando nossos Paths e Links para acessarmos nossa aplicação.
+
+6 - Criamos nossas exceptions como Adivice ou Exceptions Personalizadas, o ideal é personalizar nossas exceptions pelo advice
+    pois com ela teremos maior controle de cada exception a ser excibida e captando a exceção independente de onde oncorrer.
+
+7- Aplicamos nossas segurança do Spring Secutiry personalizando acessos em determinados Paths Solicitando autenticações e permissões para
+    Paths onde sejam necessários somente pessoas autorizadas, pois além da segurança de dados, também teremos a segurança por camadas de autorizações
+    sendo de nível user basico até adiministradores de serviços.
+
+8 - Geramos nosso token JWT.
